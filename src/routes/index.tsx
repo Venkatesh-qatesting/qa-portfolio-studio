@@ -5,8 +5,10 @@ import {
   Code2,
   Cpu,
   Database,
+  ExternalLink,
   FlaskConical,
   GraduationCap,
+
   Layers,
   Mail,
   MapPin,
@@ -159,6 +161,7 @@ const EXPERIENCE = [
 const PROJECTS = [
   {
     name: "ShubhAstro",
+    website: "https://shubhastro.ai/",
     tag: "Astrology Platform",
     tags: ["Manual Testing", "API Testing", "Jira", "Automation"],
     icon: Sparkles,
@@ -298,7 +301,7 @@ function SectionHeading({ eyebrow, title, subtitle }: { eyebrow: string; title: 
 function Hero() {
   return (
     <section id="top" className="relative overflow-hidden">
-      <div className="mx-auto max-w-6xl px-4 pb-20 pt-20 sm:px-6 sm:pt-28">
+      <div className="mx-auto max-w-6xl px-4 pb-10 pt-20 sm:px-6 sm:pt-28">
         <div className="flex flex-col items-start gap-10 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-2xl">
             <p className="eyebrow">Senior QA Engineer · Manual + Automation + API</p>
@@ -493,6 +496,17 @@ function Projects() {
                 <span className="font-mono text-xs text-muted-foreground">{project.tag}</span>
               </div>
               <h3 className="mt-4 font-display text-xl font-semibold">{project.name}</h3>
+              {project.website ? (
+                <a
+                  href={project.website}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-1 inline-flex w-fit items-center gap-1 font-mono text-xs text-primary transition-colors hover:text-glow"
+                >
+                  {project.website}
+                  <ExternalLink className="h-3 w-3" />
+                </a>
+              ) : null}
               <ul className="mt-4 flex-1 space-y-2">
                 {project.points.map((point) => (
                   <li key={point} className="flex gap-2 text-sm leading-relaxed text-muted-foreground">
@@ -593,13 +607,8 @@ function EducationContact() {
           </div>
         </div>
 
-        <div className="mx-auto mt-10 max-w-3xl rounded-2xl border border-border bg-surface/70 p-6 text-center">
-          <p className="font-mono text-xs leading-relaxed text-muted-foreground">
-            <span className="text-primary">$</span> open_to_work{" "}
-            <span className="text-primary">=</span> <span className="text-glow">true</span>;{" "}
-            <span className="text-primary">//</span> manual · automation · API · mobile · OTT
-          </p>
-          <Database className="mx-auto mt-4 h-5 w-5 text-muted-foreground" />
+        <div className="mx-auto mt-10 max-w-3xl text-center">
+          <Database className="mx-auto h-5 w-5 text-muted-foreground" />
         </div>
       </div>
     </section>
