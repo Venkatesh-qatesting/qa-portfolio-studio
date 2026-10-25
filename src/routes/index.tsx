@@ -360,7 +360,7 @@ function Hero() {
 
 function About() {
   return (
-    <section id="about" className="scroll-mt-20 border-t border-border/60 py-20">
+    <section id="about" className="scroll-mt-20 border-t border-border/60 pt-16 pb-8">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="About"
@@ -400,7 +400,7 @@ function About() {
 
 function Skills() {
   return (
-    <section id="skills" className="scroll-mt-20 border-t border-border/60 py-20">
+    <section id="skills" className="scroll-mt-20 border-t border-border/60 pt-16 pb-8">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="Toolbox"
@@ -436,7 +436,7 @@ function Skills() {
 
 function Experience() {
   return (
-    <section id="experience" className="scroll-mt-20 border-t border-border/60 py-20">
+    <section id="experience" className="scroll-mt-20 border-t border-border/60 pt-16 pb-8">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="Career"
@@ -482,7 +482,7 @@ function Experience() {
 
 function Projects() {
   return (
-    <section id="projects" className="scroll-mt-20 border-t border-border/60 py-20">
+    <section id="projects" className="scroll-mt-20 border-t border-border/60 pt-16 pb-8">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="Selected work"
@@ -538,7 +538,7 @@ function Projects() {
 
 function Achievements() {
   return (
-    <section id="achievements" className="scroll-mt-20 border-t border-border/60 py-20">
+    <section id="achievements" className="scroll-mt-20 border-t border-border/60 pt-16 pb-8">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="Impact"
@@ -564,7 +564,7 @@ function Achievements() {
 
 function EducationContact() {
   return (
-    <section id="contact" className="scroll-mt-20 border-t border-border/60 py-20">
+    <section id="contact" className="scroll-mt-20 border-t border-border/60 pt-16 pb-8">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="Education & Contact"
