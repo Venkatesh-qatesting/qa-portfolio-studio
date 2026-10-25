@@ -5,8 +5,10 @@ import {
   Code2,
   Cpu,
   Database,
+  ExternalLink,
   FlaskConical,
   GraduationCap,
+
   Layers,
   Mail,
   MapPin,
@@ -23,7 +25,7 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Venkatesh Chilukuri | Senior QA Engineer — 5 Years in Software Testing" },
+      { title: "Venkatesh Chilukuri | Senior QA Engineer — 4 Years in Software Testing" },
       {
         name: "description",
         content:
@@ -33,7 +35,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "5 years of software quality: Selenium WebDriver automation, API testing with Postman & Swagger, and end-to-end testing across web, Android, iOS and OTT applications.",
+          "4 years of software quality: Selenium WebDriver automation, API testing with Postman & Swagger, and end-to-end testing across web, Android, iOS and OTT applications.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -52,7 +54,7 @@ const NAV_LINKS = [
 ];
 
 const STATS = [
-  { value: "5+", label: "Years in QA" },
+  { value: "4+", label: "Years in QA" },
   { value: "1,400+", label: "Defects reported" },
   { value: "18+", label: "Modules tested" },
   { value: "10", label: "Release cycles" },
@@ -159,6 +161,7 @@ const EXPERIENCE = [
 const PROJECTS = [
   {
     name: "ShubhAstro",
+    website: "https://shubhastro.ai/",
     tag: "Astrology Platform",
     tags: ["Manual Testing", "API Testing", "Jira", "Automation"],
     icon: Sparkles,
@@ -170,6 +173,7 @@ const PROJECTS = [
   },
   {
     name: "Epic Shorts",
+    website: "https://epicon.in/",
     tag: "OTT / Shorts Streaming",
     tags: ["Manual Testing", "API Testing", "Postman", "Jira"],
     icon: MonitorSmartphone,
@@ -181,6 +185,7 @@ const PROJECTS = [
   },
   {
     name: "Telco OTT Suite",
+    website: "",
     tag: "Operator Branded OTT Apps",
     tags: ["Manual Testing", "API Testing", "Postman", "Jira"],
     icon: Rocket,
@@ -192,6 +197,7 @@ const PROJECTS = [
   },
   {
     name: "OMSB Portal",
+    website: "https://omsb.gov.om/",
     tag: "Medical Education Board",
     tags: ["Manual Testing", "SQL", "Postman", "Jira", "Automation"],
     icon: ShieldCheck,
@@ -298,7 +304,7 @@ function SectionHeading({ eyebrow, title, subtitle }: { eyebrow: string; title: 
 function Hero() {
   return (
     <section id="top" className="relative overflow-hidden">
-      <div className="mx-auto max-w-6xl px-4 pb-20 pt-20 sm:px-6 sm:pt-28">
+      <div className="mx-auto max-w-6xl px-4 pb-10 pt-20 sm:px-6 sm:pt-28">
         <div className="flex flex-col items-start gap-10 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-2xl">
             <p className="eyebrow">Senior QA Engineer · Manual + Automation + API</p>
@@ -306,7 +312,7 @@ function Hero() {
               Hi, I'm <span className="text-gradient-blue">Venkatesh Chilukuri</span>
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-              A QA Engineer with <span className="font-semibold text-foreground">5 years of experience</span> testing
+              A QA Engineer with <span className="font-semibold text-foreground">4 years of experience</span> testing
               web, Android, iOS, OTT and astrology applications — combining{" "}
               <span className="font-semibold text-foreground">deep manual testing</span> with{" "}
               <span className="font-semibold text-foreground">Selenium + Java automation</span> and rigorous{" "}
@@ -344,10 +350,6 @@ function Hero() {
                   </div>
                 ))}
               </dl>
-              <div className="mt-6 border-t border-border pt-4 font-mono text-xs leading-relaxed text-muted-foreground">
-                <span className="text-primary">$</span> quality.status{" "}
-                <span className="text-primary">=</span> <span className="text-glow">"assured"</span>;
-              </div>
             </div>
           </div>
         </div>
@@ -358,7 +360,7 @@ function Hero() {
 
 function About() {
   return (
-    <section id="about" className="scroll-mt-20 border-t border-border/60 py-20">
+    <section id="about" className="scroll-mt-20 border-t border-border/60 pt-16 pb-8">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="About"
@@ -398,7 +400,7 @@ function About() {
 
 function Skills() {
   return (
-    <section id="skills" className="scroll-mt-20 border-t border-border/60 py-20">
+    <section id="skills" className="scroll-mt-20 border-t border-border/60 pt-16 pb-8">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="Toolbox"
@@ -434,12 +436,12 @@ function Skills() {
 
 function Experience() {
   return (
-    <section id="experience" className="scroll-mt-20 border-t border-border/60 py-20">
+    <section id="experience" className="scroll-mt-20 border-t border-border/60 pt-16 pb-8">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="Career"
           title="Professional experience"
-          subtitle="Five years of hands-on quality engineering across product companies and enterprise clients."
+          subtitle="Four years of hands-on quality engineering across product companies and enterprise clients."
         />
         <div className="relative mx-auto max-w-3xl">
           <div className="absolute left-[7px] top-2 bottom-2 w-px bg-border" aria-hidden="true" />
@@ -480,7 +482,7 @@ function Experience() {
 
 function Projects() {
   return (
-    <section id="projects" className="scroll-mt-20 border-t border-border/60 py-20">
+    <section id="projects" className="scroll-mt-20 border-t border-border/60 pt-16 pb-8">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="Selected work"
@@ -497,6 +499,17 @@ function Projects() {
                 <span className="font-mono text-xs text-muted-foreground">{project.tag}</span>
               </div>
               <h3 className="mt-4 font-display text-xl font-semibold">{project.name}</h3>
+              {project.website ? (
+                <a
+                  href={project.website}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-1 inline-flex w-fit items-center gap-1 font-mono text-xs text-primary transition-colors hover:text-glow"
+                >
+                  {project.website}
+                  <ExternalLink className="h-3 w-3" />
+                </a>
+              ) : null}
               <ul className="mt-4 flex-1 space-y-2">
                 {project.points.map((point) => (
                   <li key={point} className="flex gap-2 text-sm leading-relaxed text-muted-foreground">
@@ -525,12 +538,12 @@ function Projects() {
 
 function Achievements() {
   return (
-    <section id="achievements" className="scroll-mt-20 border-t border-border/60 py-20">
+    <section id="achievements" className="scroll-mt-20 border-t border-border/60 pt-16 pb-8">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="Impact"
           title="Achievements"
-          subtitle="Numbers that show what five years of disciplined QA looks like."
+          subtitle="Numbers that show what four years of disciplined QA looks like."
         />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {ACHIEVEMENTS.map((item) => (
@@ -551,7 +564,7 @@ function Achievements() {
 
 function EducationContact() {
   return (
-    <section id="contact" className="scroll-mt-20 border-t border-border/60 py-20">
+    <section id="contact" className="scroll-mt-20 border-t border-border/60 pt-16 pb-8">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="Education & Contact"
@@ -597,13 +610,8 @@ function EducationContact() {
           </div>
         </div>
 
-        <div className="mx-auto mt-10 max-w-3xl rounded-2xl border border-border bg-surface/70 p-6 text-center">
-          <p className="font-mono text-xs leading-relaxed text-muted-foreground">
-            <span className="text-primary">$</span> open_to_work{" "}
-            <span className="text-primary">=</span> <span className="text-glow">true</span>;{" "}
-            <span className="text-primary">//</span> manual · automation · API · mobile · OTT
-          </p>
-          <Database className="mx-auto mt-4 h-5 w-5 text-muted-foreground" />
+        <div className="mx-auto mt-10 max-w-3xl text-center">
+          <Database className="mx-auto h-5 w-5 text-muted-foreground" />
         </div>
       </div>
     </section>
