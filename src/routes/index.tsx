@@ -173,6 +173,7 @@ const PROJECTS = [
   },
   {
     name: "Epic Shorts",
+    website: "https://epicon.in/",
     tag: "OTT / Shorts Streaming",
     tags: ["Manual Testing", "API Testing", "Postman", "Jira"],
     icon: MonitorSmartphone,
@@ -184,6 +185,7 @@ const PROJECTS = [
   },
   {
     name: "Telco OTT Suite",
+    website: "",
     tag: "Operator Branded OTT Apps",
     tags: ["Manual Testing", "API Testing", "Postman", "Jira"],
     icon: Rocket,
@@ -195,6 +197,7 @@ const PROJECTS = [
   },
   {
     name: "OMSB Portal",
+    website: "https://omsb.gov.om/",
     tag: "Medical Education Board",
     tags: ["Manual Testing", "SQL", "Postman", "Jira", "Automation"],
     icon: ShieldCheck,
