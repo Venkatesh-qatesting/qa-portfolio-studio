@@ -23,7 +23,7 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Venkatesh Chilukuri | Senior QA Engineer — 5 Years in Software Testing" },
+      { title: "Venkatesh Chilukuri | Senior QA Engineer — 4 Years in Software Testing" },
       {
         name: "description",
         content:
@@ -33,7 +33,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "5 years of software quality: Selenium WebDriver automation, API testing with Postman & Swagger, and end-to-end testing across web, Android, iOS and OTT applications.",
+          "4 years of software quality: Selenium WebDriver automation, API testing with Postman & Swagger, and end-to-end testing across web, Android, iOS and OTT applications.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -52,7 +52,7 @@ const NAV_LINKS = [
 ];
 
 const STATS = [
-  { value: "5+", label: "Years in QA" },
+  { value: "4+", label: "Years in QA" },
   { value: "1,400+", label: "Defects reported" },
   { value: "18+", label: "Modules tested" },
   { value: "10", label: "Release cycles" },
@@ -306,7 +306,7 @@ function Hero() {
               Hi, I'm <span className="text-gradient-blue">Venkatesh Chilukuri</span>
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-              A QA Engineer with <span className="font-semibold text-foreground">5 years of experience</span> testing
+              A QA Engineer with <span className="font-semibold text-foreground">4 years of experience</span> testing
               web, Android, iOS, OTT and astrology applications — combining{" "}
               <span className="font-semibold text-foreground">deep manual testing</span> with{" "}
               <span className="font-semibold text-foreground">Selenium + Java automation</span> and rigorous{" "}
@@ -344,10 +344,6 @@ function Hero() {
                   </div>
                 ))}
               </dl>
-              <div className="mt-6 border-t border-border pt-4 font-mono text-xs leading-relaxed text-muted-foreground">
-                <span className="text-primary">$</span> quality.status{" "}
-                <span className="text-primary">=</span> <span className="text-glow">"assured"</span>;
-              </div>
             </div>
           </div>
         </div>
@@ -439,7 +435,7 @@ function Experience() {
         <SectionHeading
           eyebrow="Career"
           title="Professional experience"
-          subtitle="Five years of hands-on quality engineering across product companies and enterprise clients."
+          subtitle="Four years of hands-on quality engineering across product companies and enterprise clients."
         />
         <div className="relative mx-auto max-w-3xl">
           <div className="absolute left-[7px] top-2 bottom-2 w-px bg-border" aria-hidden="true" />
@@ -530,7 +526,7 @@ function Achievements() {
         <SectionHeading
           eyebrow="Impact"
           title="Achievements"
-          subtitle="Numbers that show what five years of disciplined QA looks like."
+          subtitle="Numbers that show what four years of disciplined QA looks like."
         />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {ACHIEVEMENTS.map((item) => (
