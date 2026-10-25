@@ -65,6 +65,7 @@ const SKILL_GROUPS = [
     icon: Code2,
     title: "Programming",
     skills: ["Core Java", "SQL"],
+    accent: "primary",
   },
   {
     icon: FlaskConical,
@@ -83,6 +84,7 @@ const SKILL_GROUPS = [
       "Cross-Browser",
       "Responsive",
     ],
+    accent: "cyan",
   },
   {
     icon: Workflow,
@@ -95,16 +97,19 @@ const SKILL_GROUPS = [
       "Data-Driven Testing",
       "Page Object Model (POM)",
     ],
+    accent: "sky",
   },
   {
     icon: Network,
     title: "API Testing",
     skills: ["Postman", "Swagger", "Chucker / Proxyman", "HTTP Inspection"],
+    accent: "primary",
   },
   {
     icon: Layers,
     title: "Tools & Platforms",
     skills: ["Jira", "Eclipse", "GitHub", "MySQL", "PostgreSQL", "MS Excel", "TestFlight"],
+    accent: "amber",
   },
   {
     icon: Sparkles,
@@ -118,8 +123,16 @@ const SKILL_GROUPS = [
       "ChatGPT",
       "AWS Kiro",
     ],
+    accent: "cyan",
   },
 ];
+
+const ACCENT_CLASSES: Record<string, string> = {
+  primary: "bg-primary/15 text-primary",
+  cyan: "bg-cyan/15 text-cyan",
+  sky: "bg-sky/15 text-sky",
+  amber: "bg-amber/15 text-amber",
+};
 
 const EXPERIENCE = [
   {
@@ -215,26 +228,37 @@ const ACHIEVEMENTS = [
     value: "1,400+",
     label: "Defects identified and reported",
     detail: "Across application modules, directly supporting improved software quality.",
+    accent: "primary",
   },
   {
     icon: Layers,
     value: "18+",
     label: "Application modules tested",
     detail: "Covering end-to-end workflows and functional requirements.",
+    accent: "cyan",
   },
   {
     icon: Rocket,
     value: "10",
     label: "Release cycles supported",
     detail: "Executing planned testing activities and validating application stability.",
+    accent: "amber",
   },
   {
     icon: Cpu,
     value: "2 hrs",
     label: "Daily regression time saved",
     detail: "By automating repetitive test scenarios with Selenium WebDriver and Java.",
+    accent: "sky",
   },
 ];
+
+const ACHIEVEMENT_ACCENT: Record<string, string> = {
+  primary: "bg-primary/15 text-primary",
+  cyan: "bg-cyan/15 text-cyan",
+  sky: "bg-sky/15 text-sky",
+  amber: "bg-amber/15 text-amber",
+};
 
 function Portfolio() {
   return (
@@ -249,7 +273,7 @@ function Portfolio() {
         <Achievements />
         <EducationContact />
       </main>
-      <footer className="border-t border-border py-8 text-center font-mono text-xs text-muted-foreground">
+      <footer className="border-t border-border py-6 text-center font-mono text-xs text-muted-foreground">
         © {new Date().getFullYear()} Venkatesh Chilukuri · Senior QA Engineer · Hyderabad, India
       </footer>
     </div>
@@ -293,7 +317,7 @@ function SiteHeader() {
 
 function SectionHeading({ eyebrow, title, subtitle }: { eyebrow: string; title: string; subtitle?: string }) {
   return (
-    <div className="mx-auto mb-12 max-w-2xl text-center">
+    <div className="mx-auto mb-10 max-w-2xl text-center">
       <p className="eyebrow">{eyebrow}</p>
       <h2 className="mt-3 font-display text-3xl font-bold tracking-tight sm:text-4xl">{title}</h2>
       {subtitle ? <p className="mt-4 text-muted-foreground">{subtitle}</p> : null}
@@ -304,7 +328,7 @@ function SectionHeading({ eyebrow, title, subtitle }: { eyebrow: string; title: 
 function Hero() {
   return (
     <section id="top" className="relative overflow-hidden">
-      <div className="mx-auto max-w-6xl px-4 pb-10 pt-20 sm:px-6 sm:pt-28">
+      <div className="mx-auto max-w-6xl px-4 pb-8 pt-16 sm:px-6 sm:pt-24">
         <div className="flex flex-col items-start gap-10 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-2xl">
             <p className="eyebrow">Senior QA Engineer · Manual + Automation + API</p>
@@ -360,7 +384,7 @@ function Hero() {
 
 function About() {
   return (
-    <section id="about" className="scroll-mt-20 border-t border-border/60 pt-16 pb-8">
+    <section id="about" className="scroll-mt-20 border-t border-border/60 pt-12 pb-6">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="About"
@@ -377,7 +401,7 @@ function About() {
             </p>
           </div>
           <div className="card-glow rounded-2xl p-6">
-            <Code2 className="h-8 w-8 text-primary" />
+            <Code2 className="h-8 w-8 text-cyan" />
             <h3 className="mt-4 font-display text-lg font-semibold">Test Automation</h3>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               Selenium WebDriver scripts in Java with TestNG, Maven, a Hybrid Automation Framework, Data-Driven Testing
@@ -385,7 +409,7 @@ function About() {
             </p>
           </div>
           <div className="card-glow rounded-2xl p-6">
-            <Plug className="h-8 w-8 text-primary" />
+            <Plug className="h-8 w-8 text-sky" />
             <h3 className="mt-4 font-display text-lg font-semibold">API & Backend Validation</h3>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               Postman and Swagger for payload, status-code, schema, auth and negative testing — plus SQL and MongoDB
@@ -400,7 +424,7 @@ function About() {
 
 function Skills() {
   return (
-    <section id="skills" className="scroll-mt-20 border-t border-border/60 pt-16 pb-8">
+    <section id="skills" className="scroll-mt-20 border-t border-border/60 pt-12 pb-6">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="Toolbox"
@@ -411,7 +435,11 @@ function Skills() {
           {SKILL_GROUPS.map((group) => (
             <div key={group.title} className="card-glow rounded-2xl p-6">
               <div className="flex items-center gap-3">
-                <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/15 text-primary">
+                <span
+                  className={`flex h-10 w-10 items-center justify-center rounded-lg ${
+                    ACCENT_CLASSES[group.accent ?? "primary"]
+                  }`}
+                >
                   <group.icon className="h-5 w-5" />
                 </span>
                 <h3 className="font-display font-semibold">{group.title}</h3>
@@ -436,7 +464,7 @@ function Skills() {
 
 function Experience() {
   return (
-    <section id="experience" className="scroll-mt-20 border-t border-border/60 pt-16 pb-8">
+    <section id="experience" className="scroll-mt-20 border-t border-border/60 pt-12 pb-6">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="Career"
@@ -445,7 +473,7 @@ function Experience() {
         />
         <div className="relative mx-auto max-w-3xl">
           <div className="absolute left-[7px] top-2 bottom-2 w-px bg-border" aria-hidden="true" />
-          <div className="space-y-10">
+          <div className="space-y-6">
             {EXPERIENCE.map((job) => (
               <div key={job.role} className="relative pl-10">
                 <span
@@ -482,7 +510,7 @@ function Experience() {
 
 function Projects() {
   return (
-    <section id="projects" className="scroll-mt-20 border-t border-border/60 pt-16 pb-8">
+    <section id="projects" className="scroll-mt-20 border-t border-border/60 pt-12 pb-6">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="Selected work"
@@ -538,7 +566,7 @@ function Projects() {
 
 function Achievements() {
   return (
-    <section id="achievements" className="scroll-mt-20 border-t border-border/60 pt-16 pb-8">
+    <section id="achievements" className="scroll-mt-20 border-t border-border/60 pt-12 pb-6">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="Impact"
@@ -548,7 +576,11 @@ function Achievements() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {ACHIEVEMENTS.map((item) => (
             <div key={item.label} className="card-glow rounded-2xl p-6 text-center">
-              <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 text-primary">
+              <span
+                className={`mx-auto flex h-12 w-12 items-center justify-center rounded-xl ${
+                  ACHIEVEMENT_ACCENT[item.accent ?? "primary"]
+                }`}
+              >
                 <item.icon className="h-6 w-6" />
               </span>
               <p className="mt-4 font-display text-4xl font-bold text-gradient-blue">{item.value}</p>
@@ -564,7 +596,7 @@ function Achievements() {
 
 function EducationContact() {
   return (
-    <section id="contact" className="scroll-mt-20 border-t border-border/60 pt-16 pb-8">
+    <section id="contact" className="scroll-mt-20 border-t border-border/60 pt-12 pb-6">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="Education & Contact"
@@ -588,14 +620,14 @@ function EducationContact() {
             href="mailto:venkatesh.qatesting@gmail.com"
             className="card-glow rounded-2xl p-6 lg:col-span-1"
           >
-            <Mail className="h-8 w-8 text-primary" />
+            <Mail className="h-8 w-8 text-cyan" />
             <p className="eyebrow mt-4">Email</p>
             <p className="mt-2 break-all font-display text-lg font-semibold">venkatesh.qatesting@gmail.com</p>
             <p className="mt-2 text-sm text-muted-foreground">Best way to reach me — I reply within a day.</p>
           </a>
 
           <div className="card-glow flex flex-col rounded-2xl p-6 lg:col-span-1">
-            <Phone className="h-8 w-8 text-primary" />
+            <Phone className="h-8 w-8 text-sky" />
             <p className="eyebrow mt-4">Phone & LinkedIn</p>
             <p className="mt-2 font-display text-lg font-semibold">+91 70268 68217</p>
             <a
@@ -610,7 +642,7 @@ function EducationContact() {
           </div>
         </div>
 
-        <div className="mx-auto mt-10 max-w-3xl text-center">
+        <div className="mx-auto mt-8 max-w-3xl text-center">
           <Database className="mx-auto h-5 w-5 text-muted-foreground" />
         </div>
       </div>

@@ -42,6 +42,10 @@
   --color-surface: var(--surface);
   --color-surface-raised: var(--surface-raised);
   --color-glow: var(--glow);
+  --color-cyan: var(--cyan);
+  --color-sky: var(--sky);
+  --color-amber: var(--amber);
+  --color-success: var(--success);
   --font-display: "Space Grotesk", sans-serif;
   --font-body: "IBM Plex Sans", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
@@ -86,6 +90,12 @@
   /* Bright blue glow used for gradients and highlights */
   --glow: oklch(0.78 0.15 235);
 
+  /* Secondary hues: cyan, sky and amber counterpoints for richer UI */
+  --cyan: oklch(0.78 0.13 195);
+  --sky: oklch(0.75 0.13 240);
+  --amber: oklch(0.82 0.14 80);
+  --success: oklch(0.72 0.16 155);
+
   /* Chart colors kept blue-family with a cyan and an amber counterpoint */
   --chart-1: oklch(0.68 0.17 250);
   --chart-2: oklch(0.8 0.13 215);
@@ -122,16 +132,16 @@
 @utility bg-console {
   background-color: var(--color-background);
   background-image:
-    radial-gradient(ellipse 60% 45% at 15% -5%, color-mix(in oklab, var(--primary) 16%, transparent), transparent 70%),
-    radial-gradient(ellipse 50% 40% at 90% 10%, color-mix(in oklab, var(--glow) 9%, transparent), transparent 70%),
-    radial-gradient(ellipse 55% 35% at 50% 110%, color-mix(in oklab, var(--primary) 10%, transparent), transparent 70%),
+    radial-gradient(ellipse 60% 45% at 15% -5%, color-mix(in oklab, var(--primary) 18%, transparent), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 90% 10%, color-mix(in oklab, var(--cyan) 10%, transparent), transparent 70%),
+    radial-gradient(ellipse 55% 35% at 50% 110%, color-mix(in oklab, var(--sky) 8%, transparent), transparent 70%),
     linear-gradient(color-mix(in oklab, var(--primary) 5%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in oklab, var(--primary) 5%, transparent) 1px, transparent 1px);
+    linear-gradient(90deg, color-mix(in oklab, var(--cyan) 4%, transparent) 1px, transparent 1px);
   background-size: 100% 100%, 100% 100%, 100% 100%, 44px 44px, 44px 44px;
 }
 
 @utility text-gradient-blue {
-  background: linear-gradient(120deg, var(--glow), var(--primary) 55%, oklch(0.6 0.19 262));
+  background: linear-gradient(120deg, var(--cyan), var(--glow) 35%, var(--primary) 65%, oklch(0.6 0.19 262));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

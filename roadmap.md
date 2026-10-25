@@ -5,3 +5,5 @@
 - [x] Remove the code-query lines ($ quality.status / $ open_to_work)
 - [x] Add website links: ShubhAstro (shubhastro.ai), Epic Shorts (epicon.in), OMSB Portal (omsb.gov.om)
 - [x] Verify the page renders with all changes
+- [x] Tighten section spacing further (reduced top/bottom padding)
+- [x] Enrich color palette with cyan, sky and amber accents across cards and icons
