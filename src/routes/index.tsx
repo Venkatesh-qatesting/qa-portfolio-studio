@@ -113,7 +113,7 @@ const SKILL_GROUPS = [
   },
   {
     icon: Sparkles,
-    title: "AI & Methodologies",
+    title: "AI Tools & Methodologies",
     skills: [
       "Agile Scrum",
       "SDLC",
@@ -121,6 +121,8 @@ const SKILL_GROUPS = [
       "Defect Life Cycle",
       "AI-Assisted Test Design",
       "ChatGPT",
+      "Claude",
+      "Copilot",
       "AWS Kiro",
     ],
     accent: "cyan",
