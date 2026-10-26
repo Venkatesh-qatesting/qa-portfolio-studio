@@ -127,24 +127,43 @@
 }
 
 /*
- * Ambient background: layered radial blue glows plus a faint console grid.
+ * Ambient background: layered indigo/cyan aurora glows plus a faint console grid.
  */
 @utility bg-console {
   background-color: var(--color-background);
   background-image:
-    radial-gradient(ellipse 60% 45% at 15% -5%, color-mix(in oklab, var(--primary) 18%, transparent), transparent 70%),
-    radial-gradient(ellipse 50% 40% at 90% 10%, color-mix(in oklab, var(--cyan) 10%, transparent), transparent 70%),
-    radial-gradient(ellipse 55% 35% at 50% 110%, color-mix(in oklab, var(--sky) 8%, transparent), transparent 70%),
-    linear-gradient(color-mix(in oklab, var(--primary) 5%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in oklab, var(--cyan) 4%, transparent) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 100% 100%, 44px 44px, 44px 44px;
+    radial-gradient(ellipse 55% 40% at 12% -5%, color-mix(in oklab, var(--primary) 22%, transparent), transparent 70%),
+    radial-gradient(ellipse 45% 35% at 88% 8%, color-mix(in oklab, var(--cyan) 14%, transparent), transparent 70%),
+    radial-gradient(ellipse 50% 30% at 45% 35%, color-mix(in oklab, var(--sky) 8%, transparent), transparent 70%),
+    radial-gradient(ellipse 60% 35% at 50% 108%, color-mix(in oklab, var(--primary) 14%, transparent), transparent 70%),
+    linear-gradient(color-mix(in oklab, var(--primary) 6%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklab, var(--cyan) 5%, transparent) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 44px 44px, 44px 44px;
+  background-attachment: fixed;
 }
 
 @utility text-gradient-blue {
-  background: linear-gradient(120deg, var(--cyan), var(--glow) 35%, var(--primary) 65%, oklch(0.6 0.19 262));
+  background: linear-gradient(120deg, var(--cyan), var(--glow) 30%, var(--primary) 60%, oklch(0.66 0.2 272));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+/* Gradient primary button with a soft glow */
+@utility btn-primary {
+  background: linear-gradient(120deg, var(--color-primary), var(--color-glow) 70%, var(--color-cyan));
+  color: var(--color-primary-foreground);
+  box-shadow: 0 8px 24px -10px color-mix(in oklab, var(--primary) 60%, transparent);
+  transition:
+    filter 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+  &:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+    box-shadow: 0 12px 32px -10px color-mix(in oklab, var(--primary) 75%, transparent);
+  }
 }
 
 @utility card-glow {
@@ -157,10 +176,22 @@
     transform 0.25s ease,
     box-shadow 0.25s ease;
 
+  /* Thin luminous top edge */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--cyan) 70%, transparent) 50%, transparent);
+    opacity: 0.6;
+  }
+
   &:hover {
-    border-color: color-mix(in oklab, var(--primary) 55%, transparent);
+    border-color: color-mix(in oklab, var(--primary) 60%, transparent);
     transform: translateY(-3px);
-    box-shadow: 0 14px 40px -18px color-mix(in oklab, var(--primary) 45%, transparent);
+    box-shadow:
+      0 14px 40px -18px color-mix(in oklab, var(--primary) 55%, transparent),
+      0 0 0 1px color-mix(in oklab, var(--cyan) 20%, transparent) inset;
   }
 }
 
