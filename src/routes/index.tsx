@@ -305,7 +305,7 @@ function SiteHeader() {
         </nav>
         <a
           href="#contact"
-          className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+          className="btn-primary inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium"
         >
           <Mail className="h-4 w-4" />
           Hire me
@@ -317,7 +317,7 @@ function SiteHeader() {
 
 function SectionHeading({ eyebrow, title, subtitle }: { eyebrow: string; title: string; subtitle?: string }) {
   return (
-    <div className="mx-auto mb-10 max-w-2xl text-center">
+    <div className="mx-auto mb-7 max-w-2xl text-center">
       <p className="eyebrow">{eyebrow}</p>
       <h2 className="mt-3 font-display text-3xl font-bold tracking-tight sm:text-4xl">{title}</h2>
       {subtitle ? <p className="mt-4 text-muted-foreground">{subtitle}</p> : null}
@@ -328,7 +328,7 @@ function SectionHeading({ eyebrow, title, subtitle }: { eyebrow: string; title: 
 function Hero() {
   return (
     <section id="top" className="relative overflow-hidden">
-      <div className="mx-auto max-w-6xl px-4 pb-8 pt-16 sm:px-6 sm:pt-24">
+      <div className="mx-auto max-w-6xl px-4 pb-2 pt-12 sm:px-6 sm:pt-16">
         <div className="flex flex-col items-start gap-10 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-2xl">
             <p className="eyebrow">Senior QA Engineer · Manual + Automation + API</p>
@@ -345,7 +345,7 @@ function Hero() {
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <a
                 href="#projects"
-                className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+                className="btn-primary inline-flex items-center gap-2 rounded-lg px-6 py-3 font-medium"
               >
                 View my work
                 <ChevronRight className="h-4 w-4" />
@@ -384,7 +384,7 @@ function Hero() {
 
 function About() {
   return (
-    <section id="about" className="scroll-mt-20 border-t border-border/60 pt-12 pb-6">
+    <section id="about" className="scroll-mt-20 border-t border-border/60 pt-10 pb-2">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="About"
@@ -424,7 +424,7 @@ function About() {
 
 function Skills() {
   return (
-    <section id="skills" className="scroll-mt-20 border-t border-border/60 pt-12 pb-6">
+    <section id="skills" className="scroll-mt-20 border-t border-border/60 pt-10 pb-2">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="Toolbox"
@@ -464,7 +464,7 @@ function Skills() {
 
 function Experience() {
   return (
-    <section id="experience" className="scroll-mt-20 border-t border-border/60 pt-12 pb-6">
+    <section id="experience" className="scroll-mt-20 border-t border-border/60 pt-10 pb-2">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="Career"
@@ -510,7 +510,7 @@ function Experience() {
 
 function Projects() {
   return (
-    <section id="projects" className="scroll-mt-20 border-t border-border/60 pt-12 pb-6">
+    <section id="projects" className="scroll-mt-20 border-t border-border/60 pt-10 pb-2">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="Selected work"
@@ -566,7 +566,7 @@ function Projects() {
 
 function Achievements() {
   return (
-    <section id="achievements" className="scroll-mt-20 border-t border-border/60 pt-12 pb-6">
+    <section id="achievements" className="scroll-mt-20 border-t border-border/60 pt-10 pb-2">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="Impact"
@@ -596,7 +596,7 @@ function Achievements() {
 
 function EducationContact() {
   return (
-    <section id="contact" className="scroll-mt-20 border-t border-border/60 pt-12 pb-6">
+    <section id="contact" className="scroll-mt-20 border-t border-border/60 pt-10 pb-2">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="Education & Contact"
